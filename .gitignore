@@ -1,2 +1,1 @@
-*.dylib
-*.o
+build/

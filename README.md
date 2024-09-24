@@ -60,6 +60,10 @@ test.cpp:6:21: warning: found a call to a function with a terribly named variabl
 1 warning generated.
 ```
 
+## Building
+
+Just `make` at the repo root will work. It uses cmake so you can include it in other cmake-based projects.
+
 ## Usage
 
 You can use your existing clang-query scripts with some small modification: add two `let` statements before each match, with the names `Diagnostic` and `DiagnosticArgs`. The former is the warning message, and the latter is a space-separated list of bound nodes which will be interpolated into the warning.
