@@ -11,7 +11,6 @@
 #include "QuerySession.h"
 #include "clang/ASTMatchers/Dynamic/Parser.h"
 #include "clang/Basic/CharInfo.h"
-#include "clang/Tooling/NodeIntrospection.h"
 #include "llvm/ADT/StringRef.h"
 #include "llvm/ADT/StringSwitch.h"
 #include <optional>
@@ -105,7 +104,6 @@ QueryRef QueryParser::parseSetBool(bool QuerySession::*Var) {
 
 template <typename QueryType> QueryRef QueryParser::parseSetOutputKind() {
   StringRef ValStr;
-  bool HasIntrospection = tooling::NodeIntrospection::hasIntrospectionSupport();
   unsigned OutKind =
       LexOrCompleteWord<unsigned>(this, ValStr)
           .Case("diag", OK_Diag)
